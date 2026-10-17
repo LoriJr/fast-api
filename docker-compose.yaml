@@ -1,0 +1,14 @@
+services:
+  db-fast-api:
+    image: postgres:18
+    container_name: fast-api-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - db-fast-api_data:/var/lib/postgresql
+volumes:
+  db-fast-api_data:
